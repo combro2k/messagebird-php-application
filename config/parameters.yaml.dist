@@ -1,0 +1,7 @@
+messagebird:
+  accesskey: ABCDEFGHIJKLMOP
+  originator: 'SMSPHP'
+
+defaults:
+  to: '+31612345678'
+
