@@ -43,7 +43,7 @@ class SendCommand extends AbstractCommand
   {
     $message = join(PHP_EOL, $input->getArgument('message'));
     $to = $input->getOption('to');
-    $accesskey = $input->getOption('accesskey');
+    $accesskey = $input->getOption('access-key');
     $originator = $input->getOption('originator');
 
     $mb = new MessageBirdClient($accesskey);
