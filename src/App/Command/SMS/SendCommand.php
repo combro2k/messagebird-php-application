@@ -1,7 +1,6 @@
 <?php
 namespace App\Command\SMS;
 
-#use Symfony\Component\Console\Command\Command;
 use App\Command\AbstractCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
