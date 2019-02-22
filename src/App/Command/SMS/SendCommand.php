@@ -21,7 +21,7 @@ class SendCommand extends AbstractCommand
   /**
    * @return void
    */
-  protected function configure(): void
+  protected function configure()
   {
     $this
       ->setName('sms:send')
@@ -39,7 +39,7 @@ class SendCommand extends AbstractCommand
    *
    * @return void
    */
-  protected function execute(InputInterface $input, OutputInterface $output): void
+  protected function execute(InputInterface $input, OutputInterface $output)
   {
     $message = join(PHP_EOL, $input->getArgument('message'));
     $to = $input->getOption('to');
