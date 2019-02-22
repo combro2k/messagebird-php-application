@@ -9,14 +9,19 @@ return [
       return new SendCommand($serviceManager);
     },
     Yaml::class => function (ServiceManager $serviceManager) {
-      $configFile = __DIR__ . '/../config/parameters.yaml';
+      $configFile = '/etc/messagebird-php-application.yaml';
+      $altConfigFile = __DIR__ . '/../config/parameters.yaml';
 
-      if (!file_exists($configFile)) {
-        printf('No configuration found using defaults (parameters.yaml.dist)' . PHP_EOL . PHP_EOL, $configFile);
-        $configFile = sprintf('%s.dist', $configFile);
+      if (file_exists($configFile)) {
+        return Yaml::parseFile($configFile);
+      } 
+      if (file_exists($altConfigFile)) {
+        return Yaml::parseFile($altConfigFile);
       }
 
-      return Yaml::parseFile($configFile);
+      printf('No configuration found using defaults (parameters.yaml.dist)' . PHP_EOL . PHP_EOL, $altConfigFile);
+
+      return Yaml::parseFile(sprintf('%s.dist', $altConfigFile));
     }
   ],
 ];
