@@ -60,7 +60,7 @@ class SendCommand extends AbstractCommand
     $mbmsg->body = $message;
     
     try {
-#      $mbResult = $mb->messages->create($mbmsg);
+      $mbResult = $mb->messages->create($mbmsg);
     } catch (\MessageBird\Exceptions\AuthenticateException $e) {
       // That means that your accessKey is unknown
       $output->writeln('wrong login');
