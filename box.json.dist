@@ -1,0 +1,23 @@
+{
+  "output": "bin/messagebird-php-application.phar",
+  "git-commit-short": "git_commit_short",
+
+  "finder": [
+  {
+    "in": "vendor",
+    "exclude": ["Tests", "tests", "Test", "test"],
+    "name": "*.php"
+  },
+  {
+    "in": "src",
+    "name": "*.php"
+  }
+  ],
+
+  "files": [
+    "vendor/composer/installed.json",
+  "config/parameters.yaml.dist"
+  ],
+
+  "compression": "NONE"
+}

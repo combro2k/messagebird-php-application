@@ -8,9 +8,10 @@ return [
     SendCommand::class => function (ServiceManager $serviceManager) {
       return new SendCommand($serviceManager);
     },
+
     Yaml::class => function (ServiceManager $serviceManager) {
-      $configFile = '/etc/messagebird-php-application.yaml';
-      $altConfigFile = __DIR__ . '/../config/parameters.yaml';
+      $configFile = getenv("HOME") . '/./phpsms.yaml';
+      $altConfigFile = '/etc/messagebird-php-application.yaml';
 
       if (file_exists($configFile)) {
         return Yaml::parseFile($configFile);
@@ -21,7 +22,8 @@ return [
 
       printf('No configuration found using defaults (parameters.yaml.dist)' . PHP_EOL . PHP_EOL, $altConfigFile);
 
-      return Yaml::parseFile(sprintf('%s.dist', $altConfigFile));
+      return Yaml::parseFile(__DIR__ . '/../config/parameters.yaml.dist');
     }
+
   ],
 ];

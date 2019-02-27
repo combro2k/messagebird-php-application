@@ -6,7 +6,7 @@ use Symfony\Component\Console\Application;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$application    = new Application('PHP-SMS');
+$application    = new Application('Messagebird PHP Application', '@git_commit_short@');
 $serviceManager = new ServiceManager(require __DIR__ . '/../src/services.php');
 
 foreach (require __DIR__ . '/../src/commands.php' as $commandName) {

@@ -1,13 +1,12 @@
 {
-  "name": "mma/smsphp",
+  "name": "combro2k/messagebird-php-application",
+
+  "bin": "bin/run.php",
 
   "require": {
     "zendframework/zend-servicemanager": "~3.4",
     "messagebird/php-rest-api": "~1.13",
-    "symfony/yaml": "~3.4"
-  },
-
-  "require-dev": {
+    "symfony/yaml": "~3.4",
     "symfony/console": "~3.4"
   },
 

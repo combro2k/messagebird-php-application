@@ -2,3 +2,4 @@
 /composer.lock
 /config/*
 !/config/parameters.yaml.dist
+/bin/messagebird-php-application.phar
