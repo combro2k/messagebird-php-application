@@ -19,5 +19,5 @@
   "config/parameters.yaml.dist"
   ],
 
-  "compression": "NONE"
+  "compression": "GZ"
 }
